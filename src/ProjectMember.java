@@ -13,7 +13,6 @@ public class ProjectMember {
     }
 
     public ProjectMember(String line) {
-//project_id,employee_id,role,allocation_percent
         String[] tokens = line.split(",");
         this.projectId = tokens[0];
         this.employeeId = Integer.parseInt(tokens[1]);
