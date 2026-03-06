@@ -638,9 +638,6 @@ public class Main {
                             .filter(pm -> pm.getProjectId().equals(p.getProjectId()))
                             .forEach(pm -> AllocationPerEmployee.put(empById.get(pm.getEmployeeId()), pm.getAllocationPercent()));
 
-                    // Print the following output per project sorted by allocation percent: Alice (40 %), Clara
-                    //(30 %), ....
-
                     AllocationPerEmployee.entrySet().stream()
                             .sorted(Map.Entry.comparingByValue(Comparator.reverseOrder()))
                             .forEach(e -> System.out.printf("Project (Id: %s) %s: Employee %s with an allocation of: %d%%%n", p.getProjectId(), p.getName() ,e.getKey().getName(), e.getValue()));
